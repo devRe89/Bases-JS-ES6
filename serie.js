@@ -37,8 +37,27 @@ function getPrimes(max) {
     return primes;
 }
 
+function isPrime(num) {
+    if(num < 2) return false;
+    for (var i = 2; i < num; i++) {
+        if(num%i==0)
+            return false;
+    }
+    return true;
+}
+
+let primos = [];
+for(var i = 0; i < 10000; i++){
+    if(isPrime(i)) {
+        primos.push(i);
+    }
+}
+
+
+JSON.stringify(console.log(primos),null,'\t')
+
 console.time();
-console.log(getPrimes(100));
+// console.log(getPrimes(100));
 // console.log(4 << 1); // 1360
 console.timeEnd();
 
